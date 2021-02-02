@@ -9,7 +9,11 @@
         <div class="block">
           <div class="complete-checkbox">
             <label>
-              <input ref="complete-checkbox" type="checkbox" v-model="isCompleted" />
+              <input
+                ref="complete-checkbox"
+                type="checkbox"
+                v-model="isCompleted"
+              />
               <span class="empty"></span>
             </label>
           </div>
@@ -54,18 +58,18 @@ import { storeMixin } from "@/components/mixins/store.mixin.js";
 import {
   ENABLE_EDIT_MODE_TO_DO_ITEM,
   REMOVE_TO_DO_ITEM,
-  COMPLETE_TO_DO_ITEM,
+  COMPLETE_TO_DO_ITEM
 } from "@/store/index.constants";
 
 export default {
   name: "ToDoItem",
   props: {
-    toDoItem: Object,
+    toDoItem: Object
   },
   mixins: [storeMixin],
   data() {
     return {
-      isCompleted: this.toDoItem.isCompleted,
+      isCompleted: this.toDoItem.isCompleted
     };
   },
   methods: {
@@ -77,18 +81,18 @@ export default {
       this[ENABLE_EDIT_MODE_TO_DO_ITEM](this.toDoItem.id);
 
       this.$emit("edit-item", {
-        itemId: this.toDoItem.id,
+        itemId: this.toDoItem.id
       });
-    },
+    }
   },
 
   watch: {
     isCompleted() {
       this[COMPLETE_TO_DO_ITEM]({
         id: this.toDoItem.id,
-        isCompleted: this.isCompleted,
+        isCompleted: this.isCompleted
       });
-    },
-  },
+    }
+  }
 };
 </script>

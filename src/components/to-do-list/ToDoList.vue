@@ -31,20 +31,20 @@ import {
   EDIT_TO_DO_ITEM,
   SET_TO_DO_LIST,
   ENABLE_EDIT_MODE_TO_DO_ITEM,
-  GET_TO_DO_LIST,
+  GET_TO_DO_LIST
 } from "@/store/index.constants";
 
 export default {
   name: "ToDoList",
   components: {
-    ToDoItem,
+    ToDoItem
   },
   mixins: [storeMixin],
   data() {
     return {
       inputToDoListValue: "",
 
-      currentItem: null,
+      currentItem: null
     };
   },
   created() {
@@ -70,7 +70,7 @@ export default {
     editItem({ itemId }) {
       if (itemId) {
         this.currentItem = {
-          ...this.getToDoList.find((item) => item.id === itemId),
+          ...this.getToDoList.find(item => item.id === itemId)
         };
 
         if (this.currentItem.isEditMode) {
@@ -79,12 +79,12 @@ export default {
           this.inputToDoListValue = "";
         }
       }
-    },
+    }
   },
   computed: {
     isEditMode() {
-      return this[GET_TO_DO_LIST].some((item) => item.isEditMode);
-    },
-  },
+      return this[GET_TO_DO_LIST].some(item => item.isEditMode);
+    }
+  }
 };
 </script>
