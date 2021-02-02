@@ -1,0 +1,18 @@
+@import 'src/colors.scss';
+
+.to-do-list {
+    padding: 40px;
+}
+
+.hidden-text {
+    opacity: 0;
+
+    display: block;
+    text-align: left;
+
+    color: $base-color;
+}
+
+.active-text {
+    opacity: 1 !important;
+}

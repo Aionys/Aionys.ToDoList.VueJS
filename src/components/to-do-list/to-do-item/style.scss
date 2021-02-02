@@ -1,0 +1,73 @@
+@import 'src/colors.scss';
+
+li {
+    text-align: left;
+}
+
+.content-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .block {
+        overflow: hidden;
+        display: flex;
+
+        .complete-checkbox {
+            padding: 5px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .content {
+            p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .action-block {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            .buttons {
+                padding: 5px;
+                box-sizing: border-box;
+
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    margin: 2px;
+                }
+            }
+        }
+
+        &:first-child {
+            flex-basis: 80%;
+        }
+
+        &:last-child {
+            flex-basis: 20%;
+        }
+    }
+}
+
+.remove-btn {
+    background: $error-color !important;
+
+    &:hover {
+        background: #b41919 !important;
+    }
+}
+
+.btn {
+    background: $base-color;
+}
+
+.crossed-out-text {
+    text-decoration: line-through;
+}
